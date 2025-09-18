@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Signup() {
+export default function Register() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,39 +27,34 @@ export default function Signup() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl w-full bg-white rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
+      <div className="max-w-7xl w-full bg-white rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-4">
 
-        {/* LEFT: Illustration / Info */}
-        <div className="hidden md:flex flex-col items-center justify-center p-10 bg-gradient-to-br from-green-600 via-green-500 to-emerald-600 text-white">
-          <div className="w-full max-w-xs text-center">
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <h2 className="text-2xl font-semibold">Join us today!</h2>
-              <p className="mt-2 text-sm text-green-100">Create an account to unlock all features and stay connected.</p>
-            </div>
-
-            <div className="mt-6">
-              <svg viewBox="0 0 400 260" className="w-full h-40 object-cover opacity-90" preserveAspectRatio="xMidYMid slice" role="img" aria-hidden>
-                <rect width="400" height="260" rx="12" fill="rgba(255,255,255,0.06)" />
-                <g transform="translate(40,40)">
-                  <circle cx="40" cy="40" r="28" fill="rgba(255,255,255,0.12)" />
-                  <rect x="100" y="20" width="140" height="90" rx="8" fill="rgba(255,255,255,0.08)" />
-                  <rect x="20" y="120" width="320" height="20" rx="8" fill="rgba(255,255,255,0.06)" />
-                </g>
+        {/* Column 1: Branding/Illustration */}
+        <div className="flex flex-col items-center justify-center p-8 bg-gradient-to-br from-green-600 via-green-500 to-emerald-600 text-white">
+          <div className="text-center">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/20 mb-4">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-
-            <div className="mt-8 text-xs text-green-100/90">
-              <p className="mb-2">Already have an account? <a href="#" className="underline">Sign in</a></p>
-            </div>
+            <h2 className="text-2xl font-semibold">Join us today!</h2>
+            <p className="mt-2 text-sm text-green-100">Create an account to unlock all features and stay connected.</p>
           </div>
         </div>
 
-        {/* RIGHT: Form */}
+        {/* Column 2: Feature highlight */}
+        <div className="flex flex-col items-center justify-center p-8 bg-gray-50 border-r">
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Fast & Secure</h3>
+          <p className="text-sm text-gray-600 text-center">We value your privacy. Your data is safe with encrypted storage and secure authentication.</p>
+        </div>
+
+        {/* Column 3: Feature highlight */}
+        <div className="flex flex-col items-center justify-center p-8 bg-gray-50 border-r">
+          <h3 className="text-lg font-semibold text-gray-800 mb-2">Exclusive Benefits</h3>
+          <p className="text-sm text-gray-600 text-center">Access premium content, personalized dashboards, and special offers by registering today.</p>
+        </div>
+
+        {/* Column 4: Registration Form */}
         <div className="flex items-center justify-center p-8 sm:p-12">
           <div className="w-full max-w-md">
             <h3 className="text-2xl font-semibold text-gray-900">Create your account</h3>
@@ -78,7 +73,7 @@ export default function Signup() {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   required
                 />
               </div>
@@ -91,7 +86,7 @@ export default function Signup() {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   required
                 />
               </div>
@@ -104,7 +99,7 @@ export default function Signup() {
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   required
                 />
               </div>
@@ -117,7 +112,7 @@ export default function Signup() {
                   type="password"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
                   required
                 />
               </div>

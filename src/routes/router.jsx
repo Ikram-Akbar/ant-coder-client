@@ -6,6 +6,7 @@ import About from "../pages/About/About";
 import Signup from "../pages/Auth/Signup/Signup";
 import Login from "../pages/Auth/Login/Login";
 import Jobs from "../pages/Jobs/Jobs";
+import Register from "../pages/Auth/Signup/Register";
 
 export const router = createBrowserRouter([
   {
@@ -36,6 +37,7 @@ export const router = createBrowserRouter([
         path: "signup",
         Component: Signup,
       },
+     
       {
         path: "login",
         Component: Login,
