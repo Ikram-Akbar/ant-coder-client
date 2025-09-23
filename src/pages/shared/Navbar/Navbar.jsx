@@ -1,22 +1,43 @@
 import React from "react";
 import { NavLink } from "react-router";
 import { getNavLinkClass } from "../../utils/activeNavLinks";
+import { useContext } from "react";
+import { AuthContext } from "../../context/Auth/AuthContext";
 
 const Navbar = () => {
- 
+  const { currentUser } = useContext(AuthContext);
+
   const links = (
     <>
       <li>
-        <NavLink className={getNavLinkClass} to="/">Home</NavLink>
+        <NavLink className={getNavLinkClass} to="/">
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink className={getNavLinkClass} to="/jobs">Jobs</NavLink>
+        <NavLink className={getNavLinkClass} to="/jobs">
+          Jobs
+        </NavLink>
       </li>
       <li>
-        <NavLink className={getNavLinkClass} to="/about">About</NavLink>
+        <NavLink className={getNavLinkClass} to="/about">
+          About
+        </NavLink>
       </li>
       <li>
-        <NavLink className={getNavLinkClass} to="/contact">Contact</NavLink>
+        <NavLink className={getNavLinkClass} to="/contact">
+          Contact
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={getNavLinkClass} to="/demo-login">
+          Demo-Login
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className={getNavLinkClass} to="/demo-register">
+          Demo-Register
+        </NavLink>
       </li>
     </>
   );
@@ -55,12 +76,18 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <NavLink className="btn btn-ghost" to="/signup">
-            Sign up
-          </NavLink>
-          <NavLink className="btn" to="/login">
-            Login
-          </NavLink>
+          {currentUser ? (
+            <NavLink className="btn btn-outline" to="user-profile">User Profile</NavLink>
+          ) : (
+            <>
+              <NavLink className="btn btn-ghost" to="/signup">
+                Sign up
+              </NavLink>
+              <NavLink className="btn" to="/login">
+                Login
+              </NavLink>
+            </>
+          )}
         </div>
       </div>
     </div>

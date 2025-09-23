@@ -7,6 +7,9 @@ import Signup from "../pages/Auth/Signup/Signup";
 import Login from "../pages/Auth/Login/Login";
 import Jobs from "../pages/Jobs/Jobs";
 import Register from "../pages/Auth/Signup/Register";
+import DemoLogin from "../pages/Auth/Practices/DemoLogin";
+import DemoRegister from "../pages/Auth/Practices/DemoRegister";
+import UserProfile from "../pages/UserProfile/UserProfile";
 
 export const router = createBrowserRouter([
   {
@@ -42,6 +45,19 @@ export const router = createBrowserRouter([
         path: "login",
         Component: Login,
       },
+      {
+        path:"user-profile",
+        Component:UserProfile
+      },
+      {
+        path: "demo-login",
+        Component: DemoLogin,
+      },
+      {
+        path: "demo-register",
+        Component: DemoRegister,
+      },
+
     ],
   },
 ]);
